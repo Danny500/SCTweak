@@ -1,0 +1,19 @@
+CPU Disasm
+Address   Hex dump          Command                                  Comments
+00407F5E    393CD6          CMP DWORD PTR DS:[EDX*8+ESI],EDI         ; pointer to PROP ID
+
+== pseudo code
+BP @00407F5E
+if readmemory((edx*8)+esi) == value adress (0x91eece40)
+writememory ((edx*8)+esi, newValue)
+
+*** METHOD 2 (faster)
+
+CPU Disasm
+Address   Hex dump          Command                                  Comments
+00B8EAEA    E8 51A40000     CALL 00B98F40                            ; komt ie hier altijd of alleen bij reload map?
+== pseudo code
+BP @00408A86
+if (EDX == VALUE ADDRESS (0x91eece40))
+writemem(eax, newValue)
+

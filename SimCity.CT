@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="14">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Live value for A"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>SimCity.exe+CC4E00</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>13</ID>
+      <Description>"Live value for B"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>SimCity.exe+CC4DFC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"Live value for C"</Description>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>010C4DF4</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Prop value mem location"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>06061B58</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

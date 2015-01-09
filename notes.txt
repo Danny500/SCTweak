@@ -1,0 +1,52 @@
+file: 0xa2e2df52
+
+Search mem for fixed adress values:
+A 0x91eece40 (default: -1024) 
+B 0x95887ce7 (default: 2048)
+C 0xb8f6b4cf (default: 1024)
+
+decimal to floathex
+-1024 = 0xc4800000
+-816 = 0xc44c0000
+
+2048 = 0x45000000
+2244 = 0x450c4000
+
+1024 = 0x44800000
+1122 = 0x448c4000
+
+
+
+== Breakpoints for initial load value
+CPU Disasm
+Address   Hex dump          Command                                  Comments
+00B8D43F    F30F1000        MOVSS XMM0,DWORD PTR DS:[EAX]            ; value A
+
+CPU Disasm
+Address   Hex dump          Command                                  Comments
+00B8D3F5    F30F1000        MOVSS XMM0,DWORD PTR DS:[EAX]            ; value B
+
+CPU Disasm
+Address   Hex dump          Command                                  Comments
+00B8D3AB    F30F1000        MOVSS XMM0,DWORD PTR DS:[EAX]            ; Value C
+
+== Breakpoints for fixed pointer during run mode (use cheat engine, search on initial load value, patch it, reload map and do subsearch on new value)
+CPU Disasm
+Address   Hex dump          Command                                  Comments
+00BA7436    F30F100D 281D0C MOVSS XMM1,DWORD PTR DS:[10C1D28]        ; Value A
+
+CPU Disasm
+Address   Hex dump          Command                                  Comments
+00BA741C    F30F1005 241D0C MOVSS XMM0,DWORD PTR DS:[10C1D24]        ; Value B
+
+CPU Disasm
+Address   Hex dump          Command                                  Comments
+00B986F1    F30F5E05 1C1D0C DIVSS XMM0,DWORD PTR DS:[10C1D1C]        ; Value C
+
+Settings:
+                case "Tunnel 1": txtA.Text = "-920"; txtB.Text = "2144"; txtC.Text = "1072"; break; // A > -1024, B > 2048, C = 50% of B (iE  -928, 2144, 1072)
+                case "Tunnel 2": txtA.Text = "-816"; txtB.Text = "2244"; txtC.Text = "1122"; break;
+                case "UnderPass": txtA.Text = "-1024"; txtB.Text = "2176"; txtC.Text = "1024"; break; // B > 2048, A = negative value of C. (iE -1024, 2176, 1024)
+                case "OverPass 1": txtA.Text = "-1120"; txtB.Text = "1950"; txtC.Text = "1024"; break; // A needs to be < -1024, B needs to be < 2048. (iE -1120, 1950) C doesnt matter.
+                case "OverPass 2": txtA.Text = "-1220"; txtB.Text = "1850"; txtC.Text = "1024"; break;
+                case "Elevated": txtA.Text = "-1015"; txtB.Text = "2030"; txtC.Text = "1015"; break; // B < 2048, C = 50% of B, A = the negative Value of C. (iE -1015, 2030, 1015)
