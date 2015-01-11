@@ -15,8 +15,6 @@ decimal to floathex
 1024 = 0x44800000
 1122 = 0x448c4000
 
-
-
 == Breakpoints for initial load value
 CPU Disasm
 Address   Hex dump          Command                                  Comments
